@@ -22,3 +22,9 @@ Requirements
 
 * The lilypond package
 * The Python argparse module (`easy_install argparse`)
+
+Known issues
+------------
+
+Sometimes accidentally renders a pdf as well, even though it shouldn't. Seems to happen when there are
+`\markup` tags. Sometimes creates multiple midi files. Also, fails in roughly 10% of cases.
