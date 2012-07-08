@@ -112,7 +112,10 @@ if __name__ == '__main__':
         tmp_file.write(out_text)
         tmp_file.close()
 
-        print(subprocess.check_output(
-                ['lilypond', '-o', args.outfile, tmp_file.name], shell = False,
-                stderr=subprocess.STDOUT))
+        try:
+            print(subprocess.check_output(
+                    ['lilypond', '-o', args.outfile, tmp_file.name], shell = False,
+                    stderr=subprocess.STDOUT))
+        except Exception:
+            print('Potential error converting %s' % args.lilypondfile)
         os.unlink(tmp_file.name)
